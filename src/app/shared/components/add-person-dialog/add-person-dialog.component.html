@@ -1,0 +1,42 @@
+<h3 mat-dialog-title>Add Person</h3>
+<form (ngSubmit)="onSubmit()" [formGroup]="personForm">
+  <mat-dialog-content>
+    <!-- Name -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Name</mat-label>
+      <input data-testid="input.name" formControlName="name" matInput/>
+    </mat-form-field>
+
+    <!-- Height -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Height</mat-label>
+      <input data-testid="input.height" formControlName="height" matInput type="number"/>
+    </mat-form-field>
+
+    <!-- Width -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Mass</mat-label>
+      <input data-testid="input.mass" formControlName="mass" matInput type="number"/>
+    </mat-form-field>
+
+    <!-- Birth Year -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Birth Year</mat-label>
+      <input data-testid="input.birth_year" formControlName="birth_year" matInput type="number"/>
+    </mat-form-field>
+
+    <!-- Gender -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Gender</mat-label>
+      <input data-testid="input.gender" formControlName="gender" matInput/>
+    </mat-form-field>
+  </mat-dialog-content>
+  <div>
+    <mat-dialog-actions>
+      <button [disabled]="personForm.invalid" color="primary" data-testid="button.submit" mat-button type="submit">
+        Save
+      </button>
+    </mat-dialog-actions>
+  </div>
+</form>
+
